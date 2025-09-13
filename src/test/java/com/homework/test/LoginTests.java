@@ -1,5 +1,6 @@
 package com.homework.test;
 
+import com.homeworkphoneb.data.UserData;
 import com.homeworkphoneb.models.User;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -10,7 +11,7 @@ public class LoginTests extends TestBase {
         //click on Login link
         app.getUser().clickOnLoginLink();
         //Enter Email
-        app.getUser().fillLoginForm(new User().setEmail("aaron18@gmail.com").setPassword("Cadi26$lac"));
+        app.getUser().fillLoginForm(new User().setEmail(UserData.EMAIL).setPassword(UserData.PASSWORD));
         // click on Login button
         app.getUser().clickOnLoginButton();
         //verify Logout Button is displayed
@@ -24,7 +25,7 @@ public class LoginTests extends TestBase {
         //click on Login link
         app.getUser().clickOnLoginLink();
         //Enter Email
-        app.getUser().fillLoginForm(new User().setPassword("Cadi26$lac"));
+        app.getUser().fillLoginForm(new User().setPassword(UserData.PASSWORD));
         // click on Login button
         app.getUser().clickOnLoginButton();
         //verify Error massege displayed
