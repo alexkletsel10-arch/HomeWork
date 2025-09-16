@@ -2,6 +2,7 @@ package com.homework.test;
 
 import com.homeworkphoneb.data.UserData;
 import com.homeworkphoneb.models.User;
+import com.homeworkphoneb.utils.DataProviders;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -10,8 +11,8 @@ import org.testng.annotations.Test;
 public class CreateAccountTest extends TestBase {
 
     @BeforeMethod
-    public void ensurePrecondition(){
-        if(!app.getUser().isLoginLinkPresent()){
+    public void ensurePrecondition() {
+        if (!app.getUser().isLoginLinkPresent()) {
             app.getUser().clickOnLogoutButton();
         }
     }
@@ -28,9 +29,9 @@ public class CreateAccountTest extends TestBase {
         //findElement(By.cssSelector("#gender-female")).click()
         //Enter first name
         app.getUser().fillInRegisterForm(new User()
-                .setFirstName("Aaron")
-                .setLastName("Kennedy")
-                .setEmail("aaron18@gmail.com")
+                .setFirstName(UserData.FIRSTNAME)
+                .setLastName(UserData.LASTNAME)
+                .setEmail(UserData.EMAIL)
                 .setPassword(UserData.PASSWORD)
                 .setConfirmPassword(UserData.PASSWORD));
         app.getUser().clickOnRegistrationButton();
@@ -38,6 +39,22 @@ public class CreateAccountTest extends TestBase {
         Assert.assertTrue(app.getUser().isLogOutButtonPresent());
         //verify Continue button is displayed
         Assert.assertTrue(app.getUser().isContinueButtonPresent());
+
+
+    }
+
+    @Test(dataProvider = "createNewAccountWithCsv", dataProviderClass = DataProviders.class)
+    public void createNewAccountPositiveFromDataProviderWithCsvFileTest(User user){
+        app.getUser().clickOnRegisterLink();
+        app.getUser().clickOnGenderRadioButton();
+        app.getUser().fillInRegisterForm(user);
+        app.getUser().clickOnRegistrationButton();
+        Assert.assertTrue(app.getUser().isLogOutButtonPresent());
+        Assert.assertTrue(app.getUser().isContinueButtonPresent());
+
+
+
+
 
 
     }
@@ -62,6 +79,16 @@ public class CreateAccountTest extends TestBase {
         //Assert.assertTrue(isLogOutButtonPresent());
         //verify Continue button is displayed
         //Assert.assertTrue(isContinueButtonPresent());
+        Assert.assertTrue(app.getUser().isErrorMassagePresenteRegistration());
+
+
+    }
+    @Test(dataProvider = "exsistedUserRegistrationWithCsv",dataProviderClass = DataProviders.class)
+    public void exsistedUserRegistrationNegativeFromDataProviderWithCsvFileTest(User user){
+        app.getUser().clickOnRegisterLink();
+        app.getUser().clickOnGenderRadioButton();
+        app.getUser().fillInRegisterForm(user);
+        app.getUser().clickOnRegistrationButton();
         Assert.assertTrue(app.getUser().isErrorMassagePresenteRegistration());
 
 
