@@ -14,7 +14,7 @@ import java.lang.reflect.Method;
 
 public class TestBase {
     Logger logger = LoggerFactory.getLogger(TestBase.class);
-    protected AppManager app = new AppManager(System.getProperty("browser", Browser.CHROME.browserName()));
+    protected static AppManager app = new AppManager(System.getProperty("browser", Browser.CHROME.browserName()));
 
     @BeforeSuite
     public void setUp() {
