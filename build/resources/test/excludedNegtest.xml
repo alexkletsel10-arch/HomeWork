@@ -1,0 +1,10 @@
+<suite name="UserLogin2" verbose="1">
+    <test name="UserLog2">
+        <classes>
+            <class name="com.homework.test.LoginTests"/>
+              <methods>
+                 <exclude name=".*Negative.*"></exclude>
+              </methods>
+        </classes>
+    </test>
+</suite>

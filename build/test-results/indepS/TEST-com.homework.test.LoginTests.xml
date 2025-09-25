@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.homework.test.LoginTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-09-12T17:48:22.967Z" hostname="Mac.lan" time="1.554">
+  <properties/>
+  <testcase name="loginPositiveTest" classname="com.homework.test.LoginTests" time="1.554"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Sep 12, 2025 8:48:19 PM org.openqa.selenium.manager.SeleniumManager lambda$runCommand$1
+WARNING: The chromedriver version (139.0.7258.66) detected in PATH at /Users/alenkletsel/Tools/chromedriver might not be compatible with the detected chrome version (140.0.7339.133); currently, chromedriver 140.0.7339.82 is recommended for chrome 140.*, so it is advised to delete the driver in PATH and retry
+Sep 12, 2025 8:48:20 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 140
+Sep 12, 2025 8:48:20 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 140.0.7339.133. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.26.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+</testsuite>
