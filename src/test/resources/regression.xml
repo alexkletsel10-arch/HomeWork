@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Regression" verbose="1">
+    <test name="RegressionTest1">
+        <classes>
+            <class name="com.homework.test.LoginTests"/>
+            <class name="com.homework.test.AddItemTest"/>
+            <class name="com.homework.test.DeleteItem"/>
+        </classes>
+    </test>
+</suite>
