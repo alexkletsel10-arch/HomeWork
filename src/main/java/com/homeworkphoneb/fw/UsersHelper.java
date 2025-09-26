@@ -14,6 +14,7 @@ public class UsersHelper extends BaseHelpere {
     }
 
     public void fillInRegisterForm(User user) {
+        int i = (int) ((System.currentTimeMillis()/1000)%3600);
         type(By.cssSelector("#FirstName"), user.getFirstName());
         //Enter lastname
         type(By.cssSelector("[name='LastName']"), user.getLastName());

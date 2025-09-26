@@ -17,7 +17,7 @@ public class CreateAccountTest extends TestBase {
         }
     }
 
-    @Test
+    @Test()
 
     public void newUserRegistrationPositiveTest() {
         //int i = (int) ((System.currentTimeMillis()/1000)%3600);
